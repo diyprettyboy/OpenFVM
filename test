@@ -1,0 +1,202 @@
+#!/bin/bash
+# Linux shell script to run test
+
+if [ $# -ne 1 ]
+then
+    echo ""
+    echo "Usage: ./test [option]"
+    echo ""
+    echo "              [heat, heatp1]"
+    echo "              [gamma, gammap1, gammap2, gammap4, gammap8]"
+    echo "              [lid, lidp1, lidp2, lidp4]"
+    echo ""
+    exit 1
+fi
+
+if [ $1 = 'heat' ]
+then
+cd serial
+make all
+cd ..
+cd examples
+cd testheat
+gmsh testheat.geo -3
+../OpenFVM testheat f 1 
+gmsh testheat.scr -0
+gnuplot testheat.gph
+cd ..
+cd ..
+fi
+
+if [ $1 = 'heatp1' ]
+then
+cd parallel
+make all
+cd ..
+cd examples
+cd testheatp1
+gmsh testheatp1.geo -3
+lamboot
+mpirun -np 1 ../OpenFVM testheatp1 d 1 
+mpirun -np 1 ../OpenFVM testheatp1 f 1 
+gmsh testheatp1.scr -0
+gnuplot testheatp1.gph
+cd ..
+cd ..
+fi
+
+if [ $1 = 'gamma' ]
+then
+cd serial
+make all
+cd ..
+cd examples
+cd testgamma
+gmsh testgamma.geo -3
+../OpenFVM testgamma f 1
+gmsh testgamma.scr -0
+gnuplot testgamma.gph
+cd ..
+cd ..
+fi
+
+if [ $1 = 'gammap1' ]
+then
+cd parallel
+make all
+cd ..
+cd examples
+cd testgammap1
+gmsh testgammap1.geo -3
+lamboot
+mpirun -np 1 ../OpenFVM testgammap1 d 1
+mpirun -np 1 ../OpenFVM testgammap1 f 1
+gmsh testgammap1.scr -0
+gnuplot testgammap1.gph
+cd ..
+cd ..
+fi
+
+if [ $1 = 'gammap2' ]
+then
+cd parallel
+make all
+cd ..
+cd examples
+cd testgammap2
+gmsh testgammap2.geo -3
+lamboot
+mpirun -np 1 ../OpenFVM testgammap2 d 2
+mpirun -np 2 ../OpenFVM testgammap2 f 2
+gmsh testgammap2.scr -0
+gnuplot testgammap2.gph
+cd ..
+cd ..
+fi
+
+if [ $1 = 'gammap4' ]
+then
+cd parallel
+make all
+cd ..
+cd examples
+cd testgammap4
+gmsh testgammap4.geo -3
+lamboot
+mpirun -np 1 ../OpenFVM testgammap4 d 4
+mpirun -np 4 ../OpenFVM testgammap4 f 4
+gmsh testgammap4.scr -0
+gnuplot testgammap4.gph
+cd ..
+cd ..
+fi
+
+if [ $1 = 'gammap8' ]
+then
+cd parallel
+make all
+cd ..
+cd examples
+cd testgammap8
+gmsh testgammap8.geo -3
+lamboot
+mpirun -np 1 ../OpenFVM testgammap8 d 8
+mpirun -np 8 ../OpenFVM testgammap8 f 8
+gmsh testgammap8.scr -0
+gnuplot testgammap8.gph
+cd ..
+cd ..
+fi
+
+if [ $1 = 'lid' ]
+then
+cd serial
+make all
+cd ..
+cd examples
+cd testlid
+rm testlid_u.txt
+rm testlid_v.txt
+gmsh testlid.geo -3
+../OpenFVM testlid f 1
+gmsh testlid.scr -0
+gnuplot testlid_u.gph
+gnuplot testlid_v.gph
+cd ..
+cd ..
+fi
+
+if [ $1 = 'lidp1' ] 
+then
+cd parallel
+make all
+cd ..
+cd examples
+cd testlidp1
+gmsh testlidp1.geo -3
+lamboot
+mpirun -np 1 ../OpenFVM testlidp1 d 1
+mpirun -np 1 ../OpenFVM testlidp1 f 1
+gmsh testlidp1.scr -0
+gnuplot testlidp1_u.gph
+gnuplot testlidp1_v.gph
+cd ..
+cd ..
+fi
+
+if [ $1 = 'lidp2' ] 
+then
+cd parallel
+make all
+cd ..
+cd examples
+cd testlidp2
+gmsh testlidp2.geo -3
+lamboot
+mpirun -np 1 ../OpenFVM testlidp2 d 2
+mpirun -np 2 ../OpenFVM testlidp2 f 2
+gmsh testlidp2.scr -0
+gnuplot testlidp2_u.gph
+gnuplot testlidp2_v.gph
+cd ..
+cd ..
+fi
+
+if [ $1 = 'lidp4' ] 
+then
+cd parallel
+make all
+cd ..
+cd examples
+cd testlidp4
+gmsh testlidp4.geo -3
+lamboot
+mpirun -np 1 ../OpenFVM testlidp4 d 4
+mpirun -np 4 ../OpenFVM testlidp4 f 4
+gmsh testlidp4.scr -0
+gnuplot testlidp4_u.gph
+gnuplot testlidp4_v.gph
+cd ..
+cd ..
+fi
+
