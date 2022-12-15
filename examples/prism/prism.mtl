@@ -1,0 +1,28 @@
+$TITL OpenFVM 
+$FILE Material file
+$MTRL 1 12 Description of $CODE
+1012 1 Compressibility of fluid 0
+0.0
+1015 1 Density of fluid 0 
+1.0
+1021 1 Viscosity of fuild 0
+1E-4
+1022 1 Specific heat of fuild 0
+1.0
+1023 1 Thermal conductivity of fluid 0
+0.02
+2012 1 Compressibilty of fluid 1
+0.0
+2015 1 Density of fluid 1
+1.0
+2021 1 Viscosity of fluid 1
+1E-4
+2022 1 Specific heat of fuild 1
+1.0
+2023 1 Thermal conductivity of fluid 1
+0.18
+3050 1 Constant surface tension (fluid 0 / fluid 1)
+0.0
+3060 1 Thermal conductivity (boundary)
+10.0
+$ENDF

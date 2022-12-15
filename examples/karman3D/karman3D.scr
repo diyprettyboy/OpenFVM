@@ -1,0 +1,132 @@
+// Include "karman.geo"; 
+
+/******** Single processor ********/
+
+//Include "karman.prb";
+
+/******** Multiple regions ********/
+Include "karman.000.prb";
+Include "karman.001.prb";
+Include "karman.002.prb";
+Include "karman.003.prb";
+Include "karman.004.prb";
+Include "karman.005.prb";
+Include "karman.006.prb";
+Include "karman.007.prb";
+Include "karman.008.prb";
+Include "karman.009.prb";
+Include "karman.010.prb";
+Include "karman.011.prb";
+Include "karman.012.prb";
+Include "karman.013.prb";
+Include "karman.014.prb";
+Include "karman.015.prb";
+/*
+Include "karman.016.prb";
+Include "karman.017.prb";
+Include "karman.018.prb";
+Include "karman.019.prb";
+Include "karman.020.prb";
+Include "karman.021.prb";
+Include "karman.022.prb";
+Include "karman.023.prb";
+Include "karman.024.prb";
+Include "karman.025.prb";
+Include "karman.026.prb";
+Include "karman.027.prb";
+Include "karman.028.prb";
+Include "karman.029.prb";
+Include "karman.030.prb";
+Include "karman.031.prb";
+Include "karman.032.prb";
+Include "karman.033.prb";
+Include "karman.034.prb";
+Include "karman.035.prb";
+Include "karman.036.prb";
+Include "karman.037.prb";
+Include "karman.038.prb";
+Include "karman.039.prb";
+Include "karman.040.prb";
+Include "karman.041.prb";
+Include "karman.042.prb";
+Include "karman.043.prb";
+Include "karman.044.prb";
+Include "karman.045.prb";
+Include "karman.046.prb";
+Include "karman.047.prb";
+Include "karman.048.prb";
+Include "karman.049.prb";
+Include "karman.050.prb";
+Include "karman.051.prb";
+Include "karman.052.prb";
+Include "karman.053.prb";
+Include "karman.054.prb";
+Include "karman.055.prb";
+Include "karman.056.prb";
+Include "karman.057.prb";
+Include "karman.058.prb";
+Include "karman.059.prb";
+Include "karman.060.prb";
+Include "karman.061.prb";
+Include "karman.062.prb";
+Include "karman.063.prb";
+Include "karman.064.prb";
+Include "karman.065.prb";
+Include "karman.066.prb";
+Include "karman.067.prb";
+Include "karman.068.prb";
+Include "karman.069.prb";
+Include "karman.070.prb";
+Include "karman.071.prb";
+Include "karman.072.prb";
+Include "karman.073.prb";
+Include "karman.074.prb";
+Include "karman.075.prb";
+Include "karman.076.prb";
+Include "karman.077.prb";
+Include "karman.078.prb";
+Include "karman.079.prb";
+*/
+
+Combine Views;
+    
+Plugin(Smooth).Run;
+
+General.ScaleX = 1.6;
+General.ScaleY = 1.6;
+General.ScaleZ = 1.6;
+
+General.TranslationX -= 0.7;
+General.TranslationY += 0.1;
+
+View[0].Name = "";
+View[0].Visible = 0;
+
+Plugin(Extract).Expression0 = "Fabs(v0)";
+Plugin(Extract).TimeStep = -1;
+Plugin(Extract).iView = -1;
+
+Plugin(Extract).Run;
+
+View[1].Name = "Vorticity";
+View[1].Visible = 1;
+View[1].Axes = 0;
+View[1].Boundary = 0;
+View[1].NbIso = 12;
+View[1].IntervalsType = 2;
+View[1].ScaleType = 1;
+
+For nStep In {1:19}
+    
+    View[1].TimeStep = nStep;
+
+    Draw; // draw the scene
+
+    //Sleep 0.1; // sleep for 0.1 second
+        
+    Print Sprintf("karman-%02g.gif", nStep);
+        
+EndFor
+
+System "./whirlgif -minimize -loop -o karman.gif karman-*.gif";
+

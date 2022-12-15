@@ -1,0 +1,31 @@
+$TITL OpenFVM
+$FILE Boundary conditions file
+$BOUND 1 5 Description of $CODE
+10000 1 Empty - Physical surfaces  (ID u v w p T s) 
+      600 0.0 0.0 0.0 0.0 0.0 0.0
+10100 1 Inlet - Physical surfaces  (ID u v w p T s) 
+      601 6*0.05/0.82^2*((y+0.4)*0.82-(y+0.4)^2) 0.0 0.0 0.0 0.0 0.0
+10150 1 Outlet - Physical surfaces (ID u v w p T s) 
+      602 0.0 0.0 0.0 0.0 0.0 0.0
+10170 2 Wall - Physical surfaces  (ID u v w p T s) 
+      603 0.0 0.0 0.0 0.0 0.0 0.0
+      604 0.0 0.0 0.0 0.0 1.0 0.0      
+10250 1 Volume - Physical volumes  (ID u v w p T s) 
+      610 0.0 0.0 0.0 0.0 0.0 0.0
+$ENDF
+
+
+
+$TITL OpenFVM
+$FILE Boundary conditions file
+$BOUND 1 4 Description of $CODE
+10110 1 Pressure Inlet - Physical surfaces (ID u v w p T s) 
+      270 0.0 0.0 0.0 20.0 23.0 0.0
+10150 1 Outlet - Physical surfaces (ID u v w p T s) 
+      271 0.0 0.0 0.0 0.0 23.0 0.0
+10170 1 Wall - Physical surfaces  (ID u v w p T s) 
+      269 0.0 0.0 0.0 0.0 23.0 0.0
+10250 1 Volume - Physical volumes  (ID u v w p T s) 
+      272 0.0 0.0 0.0 0.0 23.0 0.0
+$ENDF
+

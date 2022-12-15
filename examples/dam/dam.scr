@@ -1,0 +1,117 @@
+// Include "dam.geo"; 
+
+/******** Single processor ********/
+
+//Include "dam.prb";
+
+/******** Multiple regions ********/
+/*
+Include "dam.000.prb";
+Include "dam.001.prb";
+Include "dam.002.prb";
+Include "dam.003.prb";
+Include "dam.004.prb";
+Include "dam.005.prb";
+Include "dam.006.prb";
+Include "dam.007.prb";
+Include "dam.008.prb";
+Include "dam.009.prb";
+Include "dam.010.prb";
+Include "dam.011.prb";
+Include "dam.012.prb";
+Include "dam.013.prb";
+Include "dam.014.prb";
+Include "dam.015.prb";
+Include "dam.016.prb";
+Include "dam.017.prb";
+Include "dam.018.prb";
+Include "dam.019.prb";
+Include "dam.020.prb";
+Include "dam.021.prb";
+Include "dam.022.prb";
+Include "dam.023.prb";
+Include "dam.024.prb";
+Include "dam.025.prb";
+Include "dam.026.prb";
+Include "dam.027.prb";
+Include "dam.028.prb";
+Include "dam.029.prb";
+Include "dam.030.prb";
+Include "dam.031.prb";
+Include "dam.032.prb";
+Include "dam.033.prb";
+Include "dam.034.prb";
+Include "dam.035.prb";
+Include "dam.036.prb";
+Include "dam.037.prb";
+Include "dam.038.prb";
+Include "dam.039.prb";
+Include "dam.040.prb";
+Include "dam.041.prb";
+Include "dam.042.prb";
+Include "dam.043.prb";
+Include "dam.044.prb";
+Include "dam.045.prb";
+Include "dam.046.prb";
+Include "dam.047.prb";
+Include "dam.048.prb";
+Include "dam.049.prb";
+Include "dam.050.prb";
+Include "dam.051.prb";
+Include "dam.052.prb";
+Include "dam.053.prb";
+Include "dam.054.prb";
+Include "dam.055.prb";
+Include "dam.056.prb";
+Include "dam.057.prb";
+Include "dam.058.prb";
+Include "dam.059.prb";
+Include "dam.060.prb";
+Include "dam.061.prb";
+Include "dam.062.prb";
+Include "dam.063.prb";
+Include "dam.064.prb";
+Include "dam.065.prb";
+Include "dam.066.prb";
+Include "dam.067.prb";
+Include "dam.068.prb";
+Include "dam.069.prb";
+Include "dam.070.prb";
+Include "dam.071.prb";
+Include "dam.072.prb";
+Include "dam.073.prb";
+Include "dam.074.prb";
+Include "dam.075.prb";
+Include "dam.076.prb";
+Include "dam.077.prb";
+Include "dam.078.prb";
+Include "dam.079.prb";
+*/
+
+//Combine Views;
+
+Plugin(Smooth).Run;
+
+nbviews = PostProcessing.NbViews;
+
+For nStep In {0:60} 
+
+    View[0].TimeStep = nStep;
+
+    Draw; // draw the scene
+
+    //Sleep 0.1; // sleep for 0.1 second
+
+    Print Sprintf("dam-%03g.eps", nStep);
+
+EndFor
+
+For nStep In {0:60} 
+
+    System Sprintf("convert dam-%03g.eps dam-%03g.gif", nStep, nStep);
+
+EndFor
+
+System "../../utils/whirlgif -minimize -loop -o dam.gif dam-*.gif";
+
+

@@ -1,0 +1,41 @@
+/********************************************************************* 
+ *
+ *  Waves3D Gmsh Script
+ *
+ *********************************************************************/
+
+//Include "waves.geo";
+
+//Include "waves.prb";
+
+//View[0].Axes = 0;
+//View[0].Boundary = 1;
+
+//General.ScaleX = 1.6;
+//General.ScaleY = 1.6;
+//General.ScaleZ = 1.6;
+
+//General.TranslationX -= 0.7;
+//General.TranslationY += 0.1;
+
+For nStep In {0:120} 
+    
+    View[0].TimeStep = nStep;
+    View[1].TimeStep = nStep;
+
+    Draw; // draw the scene
+
+    //Sleep 0.1; // sleep for 0.1 second
+        
+    Print Sprintf("waves3D-%03g.eps", nStep);
+    
+EndFor
+
+For nStep In {0:120} 
+        
+    System Sprintf("convert waves3D-%03g.eps waves3D-%03g.gif", nStep, nStep);
+    
+EndFor
+
+System "../../utils/whirlgif -minimize -loop -o waves3D.gif waves3D-*.gif";
+

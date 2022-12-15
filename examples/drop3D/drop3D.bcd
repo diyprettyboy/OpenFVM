@@ -1,0 +1,17 @@
+$TITL OpenFVM
+$FILE Boundary conditions file
+$BOUND 1 2 Description of $CODE
+10200 6 Surface - Physical surfaces (ID u v w p T s) 
+       1 0.0 0.0 0.0 0.0 0.0 0.0
+       2 0.0 0.0 0.0 0.0 0.0 0.0
+       3 0.0 0.0 0.0 0.0 0.0 0.0
+       4 0.0 0.0 0.0 0.0 0.0 0.0
+       5 0.0 0.0 0.0 0.0 0.0 0.0
+       6 0.0 0.0 0.0 0.0 0.0 0.0
+10250 2 Volume - Physical volumes (ID u v w p T s) 
+       1 0.0 -1.0 0.0 0.0 0.0 0.0
+       2 0.0 -1.0 0.0 0.0 0.0 1.0
+$ENDF
+
+
+

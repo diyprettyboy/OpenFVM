@@ -1,0 +1,15 @@
+#set terminal postscript eps            # set output to eps file
+set xtic auto                          # set xtics automatically
+set ytic auto                          # set ytics automatically
+set title 'Heat conduction and convection (upwind effect)'
+set xlabel 'z (m)'
+set ylabel 'T'
+set xrange[0.0:1.2]
+set yrange[0.0:1.2]
+#set key 0.8,0.6
+set pointsize 1
+#set output 'heattest.eps' 
+plot 'testheat.txt' using 3:4 title 'Serial version' with linespoints, 'cfd.txt' using 1:2 title 'Analytical' with lines
+pause -1
+
+

@@ -1,0 +1,57 @@
+/********************************************************************* 
+ *
+ *  Heat test
+ *
+ *********************************************************************/
+
+// Include "heattestp1.geo"; 
+
+/******** Single processor ********/
+
+Include "testheatp1.000.prb";
+
+nbviews = PostProcessing.NbViews;
+
+View[0].Name = "Temperature_[K]";
+View[0].Visible = 0;
+
+View "Temperature_[K]-Centerline" {
+SP(0.025,0.025,0.0){1.0};};
+
+Plugin(CutGrid).X0 = 0.025;
+Plugin(CutGrid).Y0 = 0.025;
+Plugin(CutGrid).Z0 = 0.1;
+Plugin(CutGrid).X1 = 0.025;
+Plugin(CutGrid).Y1 = 0.025;
+Plugin(CutGrid).Z1 = 0.1;
+Plugin(CutGrid).X2 = 0.025;
+Plugin(CutGrid).Y2 = 0.025;
+Plugin(CutGrid).Z2 = 0.9;
+Plugin(CutGrid).nPointsU = 1;
+Plugin(CutGrid).nPointsV = 5;
+Plugin(CutGrid).ConnectPoints = 0;
+Plugin(CutGrid).iView = -1;
+
+Plugin(CutGrid).Run;
+
+View[2].Name = "Temperature_[K]-Centerline";
+
+View "Temperature_[K]-Centerline" {
+SP(0.025,0.025,1.0){0.0};};
+
+Combine ElementsFromVisibleViews;
+
+View[1].Axes = 2;
+View[1].Type = 2;
+View[1].IntervalsType = 2;
+View[1].Name = "Temperature_[K]-Centerline";
+View[1].AxesLabelX = "z [m]";
+View[1].AxesLabelY = "T";
+
+PostProcessing.Format = 4;
+
+// Save results to graph for using gnuplot
+Save View[1] "testheatp1.txt";
+
+//System "gnuplot testheatp1.gph";
+

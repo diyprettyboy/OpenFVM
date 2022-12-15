@@ -1,0 +1,16 @@
+#set terminal postscript eps enhanced         # set output to eps file
+set terminal postscript eps enhanced color  # set output to eps file
+set xtic auto                                # set xtics automatically
+set ytic auto                                # set ytics automatically
+set key Left reverse
+set title 'Transport of a scalar with periodic boundary conditions'
+set xlabel 'x (m)'
+set ylabel 'Volume fraction'
+set xrange[0.0:1.0]
+set yrange[-0.4:1.4]
+set key 0.74,1.2
+set pointsize 1
+set output 'cicsam1D.eps' 
+plot 'cicsam1D_0.txt' using 3:4 title 'Initial' with lines 3, 'nocicsam1D_uds.txt' using 3:4 title 'Without CICSAM - UDS' with lines 7, 'nocicsam1D_cds.txt' using 3:4 title 'Without CICSAM - CDS' with lines 11, 'cicsam1D_1.txt' using 3:4 title 'With CICSAM (1 cycle)' with lines 1
+pause -1
+

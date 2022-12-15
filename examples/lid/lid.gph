@@ -1,0 +1,14 @@
+#set terminal postscript eps            # set output to eps file
+set xtic auto                          # set xtics automatically
+set ytic auto                          # set ytics automatically
+set title 'Velocity profiles at the centerline of the lid-driven cavity at Re = 100'
+set xlabel 'U/U0'
+set ylabel 'y/y0'
+set xrange[-0.4:1.0]
+set yrange[0.0:1.0]
+set key 0.8,0.6
+set pointsize 1
+#set output 'lid.eps' 
+plot 'lid.txt' using 4:2 title 'Current study' with lines 1, 'ghia.txt' using 4:2 title 'Ghia et al., 1982' with points 1
+pause -1
+

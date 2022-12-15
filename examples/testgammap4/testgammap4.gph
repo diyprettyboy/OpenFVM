@@ -1,0 +1,15 @@
+#set terminal postscript eps            # set output to eps file
+set xtic auto                          # set xtics automatically
+set ytic auto                          # set ytics automatically
+set key Left reverse
+set title 'Transport of a scalar with periodic boundary conditions'
+set xlabel 'x (m)'
+set ylabel 'Volume fraction'
+set xrange[0.0:1.0]
+set yrange[-0.2:1.2]
+set key 0.8,0.8
+set pointsize 1
+#set output 'testgamma.eps' 
+plot 'testgammap4_0.txt' using 3:4 title 'Exact' with lines 1, 'testgammap4.txt' using 3:4 title 'Parallel version - 4 processors' with lines 2
+pause -1
+

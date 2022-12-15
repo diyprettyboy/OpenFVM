@@ -1,0 +1,680 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 34.83     88.73    88.73                             MulInv_QV
+ 33.50    174.08    85.35                             Mul_QV
+  8.63    196.07    21.99                             Mul_VV
+  6.95    213.77    17.70                             SubAsgn_VV
+  5.27    227.20    13.43                             V_SetAllCmp
+  2.14    232.66     5.46                             AddAsgn_VV
+  1.37    236.16     3.50                             l2Norm_V
+  1.36    239.62     3.46 46505356     0.00     0.00  GeoMagVector
+  1.02    242.22     2.61                             MulAsgn_VS
+  0.61    243.78     1.56 45104640     0.00     0.00  OctDispatch
+  0.57    245.22     1.44        2     0.72     4.03  MshConnectFaces
+  0.46    246.38     1.16        2     0.58     1.37  OctCreateRecursive
+  0.37    247.34     0.95                             Sub_VV
+  0.29    248.07     0.74 49037836     0.00     0.00  GeoSubVectorVector
+  0.27    248.75     0.68   576000     0.00     0.00  Gradient
+  0.26    249.43     0.67       10     0.07     0.07  BuildContinuityMatrix
+  0.26    250.09     0.67       10     0.07     0.07  BuildMomentumMatrix
+  0.21    250.62     0.53                             V_GetCmp
+  0.18    251.09     0.47       10     0.05     0.05  CorrectFaceUVW
+  0.17    251.53     0.43                             LASResult
+  0.15    251.91     0.38                             ILUFactor
+  0.13    252.25     0.34       10     0.03     0.03  CorrectFaceP
+  0.12    252.56     0.31                             V_SetCmp
+  0.06    252.72     0.16        1     0.16     0.56  MshCreateFaces
+  0.06    252.88     0.16                             Q_AllocInvDiagEl
+  0.05    253.01     0.14        1     0.14     0.38  MshCalcPropFaces
+  0.05    253.15     0.13                             Q_SetEntry
+  0.04    253.25     0.11        1     0.11     0.17  SetBoundary
+  0.04    253.35     0.10        1     0.10     9.20  MshImportMSH
+  0.03    253.44     0.08  3110400     0.00     0.00  GeoCrossVector
+  0.03    253.51     0.08                             GeoAddVectorVector
+  0.03    253.59     0.08                             Q_Constr
+  0.03    253.67     0.07   691200     0.00     0.00  GeoCalcTriArea
+  0.03    253.74     0.07                             ElCompar
+  0.03    253.81     0.07                             Q_SetLen
+  0.02    253.87     0.06        2     0.03     0.03  PrintAsciiVectorElement
+  0.02    253.93     0.06                             V_Unlock
+  0.02    253.98     0.05  1036800     0.00     0.00  GeoCalcNormal
+  0.02    254.02     0.04  1036800     0.00     0.00  GeoNormalizeVector
+  0.02    254.06     0.04       11     0.00     0.00  SetMaterialProperties
+  0.02    254.10     0.04        1     0.04     0.04  MshRemoveBoundaryFaces
+  0.02    254.14     0.04        1     0.04     0.04  WriteProbeViews
+  0.02    254.18     0.04                             GMRESIter
+  0.02    254.22     0.04                             Q_SortEl
+  0.01    254.25     0.03  1042560     0.00     0.00  factor
+  0.01    254.28     0.03   920640     0.00     0.00  GeoMultScalarVector
+  0.01    254.31     0.03       10     0.00     0.07  CorrectVelocityField
+  0.01    254.34     0.03        1     0.03     0.03  MshCalcPropMesh
+  0.01    254.37     0.03        1     0.03     0.03  SetInitialFlux
+  0.01    254.40     0.03                             V_Lock
+  0.01    254.43     0.03                             GeoMultVectorVector
+  0.01    254.44     0.02  7297920     0.00     0.00  eatspace
+  0.01    254.47     0.02  1042560     0.00     0.00  evaluate
+  0.01    254.49     0.02   345600     0.00     0.00  GeoCalcCentroid4
+  0.01    254.50     0.02   345600     0.00     0.00  GeoCalcQuadArea
+  0.01    254.53     0.02     5120     0.00     0.00  OctAddLeaf
+  0.01    254.54     0.02        1     0.02     0.02  MshCorrectNonOrthogonality
+  0.01    254.56     0.02        1     0.02     0.02  MshGetElementTypes
+  0.01    254.59     0.02        1     0.02     0.05  SetInitialConditions
+  0.01    254.60     0.02                             Asgn_VV
+  0.01    254.62     0.02                             V_Constr
+  0.00    254.63     0.01  2082240     0.00     0.00  GeoDotVectorVector
+  0.00    254.65     0.01  1042560     0.00     0.00  expression
+  0.00    254.66     0.01  1042560     0.00     0.00  potens
+  0.00    254.66     0.01        1     0.01     0.01  MshFreeMemory
+  0.00    254.68     0.01                             Add_QQ
+  0.00    254.69     0.01                             Diag_Q
+  0.00    254.69     0.01                             ILUPrecond
+  0.00    254.71     0.01                             Mul_SV
+  0.00    254.72     0.01                             Q_Destr
+  0.00    254.72     0.01                             Q_Lock
+  0.00    254.74     0.01                             Q_Unlock
+  0.00    254.74     0.01                             GeoCalcCentroid8
+  0.00    254.74     0.00  1042560     0.00     0.00  product
+  0.00    254.74     0.00  1042560     0.00     0.00  signedfactor
+  0.00    254.74     0.00    13456     0.00     0.00  OctCreateNode
+  0.00    254.74     0.00       62     0.00     0.00  ttime
+  0.00    254.74     0.00       52     0.00     0.00  GetLine
+  0.00    254.74     0.00       30     0.00     0.00  SolveMatrix
+  0.00    254.74     0.00       10     0.00     0.00  CalculateCorrectionFactors
+  0.00    254.74     0.00       10     0.00     0.00  CalculateGamma
+  0.00    254.74     0.00       10     0.00     0.10  CalculatePressure
+  0.00    254.74     0.00       10     0.00     0.00  CalculateTemperature
+  0.00    254.74     0.00       10     0.00     0.07  CalculateVelocity
+  0.00    254.74     0.00       10     0.00     0.12  CorrectVelocity
+  0.00    254.74     0.00       10     0.00     0.29  Solve
+  0.00    254.74     0.00        6     0.00     0.00  GetEntrySurface
+  0.00    254.74     0.00        2     0.00     1.37  OctCreateOctree
+  0.00    254.74     0.00        2     0.00     0.00  OctDestroyOctree
+  0.00    254.74     0.00        2     0.00     0.00  PrintAsciiHeaderVectorElement
+  0.00    254.74     0.00        2     0.00     0.00  PrintAsciiTime
+  0.00    254.74     0.00        2     0.00     0.03  WriteAsciiVectorElement
+  0.00    254.74     0.00        2     0.00     0.03  WriteResults
+  0.00    254.74     0.00        1     0.00     0.00  AllocateMemory
+  0.00    254.74     0.00        1     0.00     0.00  BcdImportBCD
+  0.00    254.74     0.00        1     0.00     0.00  DeallocateMemory
+  0.00    254.74     0.00        1     0.00     0.00  GetEntryVolume
+  0.00    254.74     0.00        1     0.00     0.00  MshAddBoundaryFaces
+  0.00    254.74     0.00        1     0.00     0.00  MtlImportMTL
+  0.00    254.74     0.00        1     0.00     0.00  ParImportPAR
+  0.00    254.74     0.00        1     0.00     0.00  SetDefaults
+  0.00    254.74     0.00        1     0.00     3.26  Simulation
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) for 0.00% of 254.74 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     34.8   88.73    0.00                 MulInv_QV [1]
+-----------------------------------------------
+                                                 <spontaneous>
+[2]     33.5   85.35    0.00                 Mul_QV [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[3]      8.6   21.99    0.00                 Mul_VV [3]
+-----------------------------------------------
+                                                 <spontaneous>
+[4]      6.9   17.70    0.00                 SubAsgn_VV [4]
+-----------------------------------------------
+                                                 <spontaneous>
+[5]      5.3   13.43    0.00                 V_SetAllCmp [5]
+-----------------------------------------------
+                                                 <spontaneous>
+[6]      4.9    0.00   12.47                 main [6]
+                0.10    9.10       1/1           MshImportMSH [7]
+                0.00    3.26       1/1           Simulation [12]
+                0.01    0.00       1/1           MshFreeMemory [76]
+                0.00    0.00       2/62          ttime [86]
+                0.00    0.00       1/1           ParImportPAR [102]
+                0.00    0.00       1/1           BcdImportBCD [97]
+                0.00    0.00       1/1           MtlImportMTL [101]
+-----------------------------------------------
+                0.10    9.10       1/1           main [6]
+[7]      3.6    0.10    9.10       1         MshImportMSH [7]
+                1.44    6.62       2/2           MshConnectFaces [8]
+                0.16    0.40       1/1           MshCreateFaces [27]
+                0.14    0.24       1/1           MshCalcPropFaces [32]
+                0.04    0.00       1/1           MshRemoveBoundaryFaces [57]
+                0.03    0.00       1/1           MshCalcPropMesh [64]
+                0.02    0.00       1/1           MshGetElementTypes [72]
+                0.02    0.00       1/1           MshCorrectNonOrthogonality [71]
+                0.00    0.00       1/1           MshAddBoundaryFaces [100]
+-----------------------------------------------
+                1.44    6.62       2/2           MshImportMSH [7]
+[8]      3.2    1.44    6.62       2         MshConnectFaces [8]
+                3.22    0.00 43394956/46505356     GeoMagVector [11]
+                0.00    2.74       2/2           OctCreateOctree [14]
+                0.65    0.00 43394956/49037836     GeoSubVectorVector [21]
+                0.00    0.00       2/2           OctDestroyOctree [93]
+-----------------------------------------------
+                                                 <spontaneous>
+[9]      2.1    5.46    0.00                 AddAsgn_VV [9]
+-----------------------------------------------
+                                                 <spontaneous>
+[10]     1.4    3.50    0.00                 l2Norm_V [10]
+-----------------------------------------------
+                0.08    0.00 1036800/46505356     GeoNormalizeVector [41]
+                0.15    0.00 2073600/46505356     MshCalcPropFaces [32]
+                3.22    0.00 43394956/46505356     MshConnectFaces [8]
+[11]     1.4    3.46    0.00 46505356         GeoMagVector [11]
+-----------------------------------------------
+                0.00    3.26       1/1           main [6]
+[12]     1.3    0.00    3.26       1         Simulation [12]
+                0.00    2.90      10/10          Solve [13]
+                0.11    0.06       1/1           SetBoundary [38]
+                0.00    0.06       2/2           WriteResults [51]
+                0.02    0.03       1/1           SetInitialConditions [54]
+                0.04    0.00       1/1           WriteProbeViews [58]
+                0.03    0.00       1/1           SetInitialFlux [65]
+                0.00    0.00       1/11          SetMaterialProperties [56]
+                0.00    0.00       1/1           AllocateMemory [96]
+                0.00    0.00       1/1           DeallocateMemory [98]
+-----------------------------------------------
+                0.00    2.90      10/10          Simulation [12]
+[13]     1.1    0.00    2.90      10         Solve [13]
+                0.00    1.18      10/10          CorrectVelocity [18]
+                0.00    1.02      10/10          CalculatePressure [19]
+                0.00    0.67      10/10          CalculateVelocity [26]
+                0.04    0.00      10/11          SetMaterialProperties [56]
+                0.00    0.00      10/10          CalculateGamma [90]
+                0.00    0.00      10/10          CalculateTemperature [91]
+-----------------------------------------------
+                0.00    2.74       2/2           MshConnectFaces [8]
+[14]     1.1    0.00    2.74       2         OctCreateOctree [14]
+                1.16    1.58       2/2           OctCreateRecursive [15]
+-----------------------------------------------
+                                1680             OctCreateRecursive [15]
+                1.16    1.58       2/2           OctCreateOctree [14]
+[15]     1.1    1.16    1.58       2+1680    OctCreateRecursive [15]
+                1.56    0.00 45104640/45104640     OctDispatch [17]
+                0.02    0.00    5120/5120        OctAddLeaf [70]
+                0.00    0.00   13456/13456       OctCreateNode [85]
+                                1680             OctCreateRecursive [15]
+-----------------------------------------------
+                                                 <spontaneous>
+[16]     1.0    2.61    0.00                 MulAsgn_VS [16]
+-----------------------------------------------
+                1.56    0.00 45104640/45104640     OctCreateRecursive [15]
+[17]     0.6    1.56    0.00 45104640         OctDispatch [17]
+-----------------------------------------------
+                0.00    1.18      10/10          Solve [13]
+[18]     0.5    0.00    1.18      10         CorrectVelocity [18]
+                0.03    0.68      10/10          CorrectVelocityField [22]
+                0.47    0.00      10/10          CorrectFaceUVW [29]
+-----------------------------------------------
+                0.00    1.02      10/10          Solve [13]
+[19]     0.4    0.00    1.02      10         CalculatePressure [19]
+                0.67    0.00      10/10          BuildContinuityMatrix [24]
+                0.34    0.01      10/10          CorrectFaceP [33]
+                0.00    0.00      10/30          SolveMatrix [88]
+-----------------------------------------------
+                                                 <spontaneous>
+[20]     0.4    0.95    0.00                 Sub_VV [20]
+-----------------------------------------------
+                0.01    0.00  345600/49037836     MshCreateFaces [27]
+                0.03    0.00 2073600/49037836     GeoCalcNormal [37]
+                0.05    0.00 3223680/49037836     MshCalcPropFaces [32]
+                0.65    0.00 43394956/49037836     MshConnectFaces [8]
+[21]     0.3    0.74    0.00 49037836         GeoSubVectorVector [21]
+-----------------------------------------------
+                0.03    0.68      10/10          CorrectVelocity [18]
+[22]     0.3    0.03    0.68      10         CorrectVelocityField [22]
+                0.68    0.00  576000/576000      Gradient [23]
+-----------------------------------------------
+                0.68    0.00  576000/576000      CorrectVelocityField [22]
+[23]     0.3    0.68    0.00  576000         Gradient [23]
+-----------------------------------------------
+                0.67    0.00      10/10          CalculatePressure [19]
+[24]     0.3    0.67    0.00      10         BuildContinuityMatrix [24]
+-----------------------------------------------
+                0.67    0.00      10/10          CalculateVelocity [26]
+[25]     0.3    0.67    0.00      10         BuildMomentumMatrix [25]
+-----------------------------------------------
+                0.00    0.67      10/10          Solve [13]
+[26]     0.3    0.00    0.67      10         CalculateVelocity [26]
+                0.67    0.00      10/10          BuildMomentumMatrix [25]
+                0.00    0.00      20/30          SolveMatrix [88]
+                0.00    0.00      10/10          CalculateCorrectionFactors [89]
+-----------------------------------------------
+                0.16    0.40       1/1           MshImportMSH [7]
+[27]     0.2    0.16    0.40       1         MshCreateFaces [27]
+                0.02    0.28  345600/345600      GeoCalcQuadArea [35]
+                0.02    0.06  345600/1036800     GeoCalcNormal [37]
+                0.02    0.00  345600/345600      GeoCalcCentroid4 [69]
+                0.01    0.00  345600/49037836     GeoSubVectorVector [21]
+                0.00    0.00  345600/2082240     GeoDotVectorVector [75]
+-----------------------------------------------
+                                                 <spontaneous>
+[28]     0.2    0.53    0.00                 V_GetCmp [28]
+-----------------------------------------------
+                0.47    0.00      10/10          CorrectVelocity [18]
+[29]     0.2    0.47    0.00      10         CorrectFaceUVW [29]
+-----------------------------------------------
+                                                 <spontaneous>
+[30]     0.2    0.43    0.00                 LASResult [30]
+-----------------------------------------------
+                                                 <spontaneous>
+[31]     0.1    0.38    0.00                 ILUFactor [31]
+-----------------------------------------------
+                0.14    0.24       1/1           MshImportMSH [7]
+[32]     0.1    0.14    0.24       1         MshCalcPropFaces [32]
+                0.15    0.00 2073600/46505356     GeoMagVector [11]
+                0.05    0.00 3223680/49037836     GeoSubVectorVector [21]
+                0.03    0.00  920640/920640      GeoMultScalarVector [63]
+                0.00    0.00  575040/2082240     GeoDotVectorVector [75]
+-----------------------------------------------
+                0.34    0.01      10/10          CalculatePressure [19]
+[33]     0.1    0.34    0.01      10         CorrectFaceP [33]
+                0.01    0.00 1161600/2082240     GeoDotVectorVector [75]
+-----------------------------------------------
+                                                 <spontaneous>
+[34]     0.1    0.31    0.00                 V_SetCmp [34]
+-----------------------------------------------
+                0.02    0.28  345600/345600      MshCreateFaces [27]
+[35]     0.1    0.02    0.28  345600         GeoCalcQuadArea [35]
+                0.07    0.20  691200/691200      GeoCalcTriArea [36]
+-----------------------------------------------
+                0.07    0.20  691200/691200      GeoCalcQuadArea [35]
+[36]     0.1    0.07    0.20  691200         GeoCalcTriArea [36]
+                0.03    0.12  691200/1036800     GeoCalcNormal [37]
+                0.05    0.00 2073600/3110400     GeoCrossVector [43]
+-----------------------------------------------
+                0.02    0.06  345600/1036800     MshCreateFaces [27]
+                0.03    0.12  691200/1036800     GeoCalcTriArea [36]
+[37]     0.1    0.05    0.17 1036800         GeoCalcNormal [37]
+                0.04    0.08 1036800/1036800     GeoNormalizeVector [41]
+                0.03    0.00 2073600/49037836     GeoSubVectorVector [21]
+                0.03    0.00 1036800/3110400     GeoCrossVector [43]
+-----------------------------------------------
+                0.11    0.06       1/1           Simulation [12]
+[38]     0.1    0.11    0.06       1         SetBoundary [38]
+                0.01    0.05  696960/1042560     evaluate [42]
+-----------------------------------------------
+                                                 <spontaneous>
+[39]     0.1    0.16    0.00                 Q_AllocInvDiagEl [39]
+-----------------------------------------------
+                                                 <spontaneous>
+[40]     0.1    0.13    0.00                 Q_SetEntry [40]
+-----------------------------------------------
+                0.04    0.08 1036800/1036800     GeoCalcNormal [37]
+[41]     0.0    0.04    0.08 1036800         GeoNormalizeVector [41]
+                0.08    0.00 1036800/46505356     GeoMagVector [11]
+-----------------------------------------------
+                0.01    0.02  345600/1042560     SetInitialConditions [54]
+                0.01    0.05  696960/1042560     SetBoundary [38]
+[42]     0.0    0.02    0.07 1042560         evaluate [42]
+                0.01    0.05 1042560/1042560     expression [48]
+                0.01    0.00 2085120/7297920     eatspace [68]
+-----------------------------------------------
+                0.03    0.00 1036800/3110400     GeoCalcNormal [37]
+                0.05    0.00 2073600/3110400     GeoCalcTriArea [36]
+[43]     0.0    0.08    0.00 3110400         GeoCrossVector [43]
+-----------------------------------------------
+                                                 <spontaneous>
+[44]     0.0    0.08    0.00                 GeoAddVectorVector [44]
+-----------------------------------------------
+                                                 <spontaneous>
+[45]     0.0    0.08    0.00                 Q_Constr [45]
+-----------------------------------------------
+                                                 <spontaneous>
+[46]     0.0    0.07    0.00                 ElCompar [46]
+-----------------------------------------------
+                                                 <spontaneous>
+[47]     0.0    0.07    0.00                 Q_SetLen [47]
+-----------------------------------------------
+                0.01    0.05 1042560/1042560     evaluate [42]
+[48]     0.0    0.01    0.05 1042560         expression [48]
+                0.00    0.05 1042560/1042560     product [53]
+                0.00    0.00 1042560/7297920     eatspace [68]
+-----------------------------------------------
+                0.06    0.00       2/2           WriteAsciiVectorElement [50]
+[49]     0.0    0.06    0.00       2         PrintAsciiVectorElement [49]
+-----------------------------------------------
+                0.00    0.06       2/2           WriteResults [51]
+[50]     0.0    0.00    0.06       2         WriteAsciiVectorElement [50]
+                0.06    0.00       2/2           PrintAsciiVectorElement [49]
+                0.00    0.00       2/2           PrintAsciiHeaderVectorElement [94]
+                0.00    0.00       2/2           PrintAsciiTime [95]
+-----------------------------------------------
+                0.00    0.06       2/2           Simulation [12]
+[51]     0.0    0.00    0.06       2         WriteResults [51]
+                0.00    0.06       2/2           WriteAsciiVectorElement [50]
+-----------------------------------------------
+                                                 <spontaneous>
+[52]     0.0    0.06    0.00                 V_Unlock [52]
+-----------------------------------------------
+                0.00    0.05 1042560/1042560     expression [48]
+[53]     0.0    0.00    0.05 1042560         product [53]
+                0.01    0.04 1042560/1042560     potens [55]
+                0.00    0.00 1042560/7297920     eatspace [68]
+-----------------------------------------------
+                0.02    0.03       1/1           Simulation [12]
+[54]     0.0    0.02    0.03       1         SetInitialConditions [54]
+                0.01    0.02  345600/1042560     evaluate [42]
+-----------------------------------------------
+                0.01    0.04 1042560/1042560     product [53]
+[55]     0.0    0.01    0.04 1042560         potens [55]
+                0.00    0.04 1042560/1042560     signedfactor [61]
+                0.00    0.00 1042560/7297920     eatspace [68]
+-----------------------------------------------
+                0.00    0.00       1/11          Simulation [12]
+                0.04    0.00      10/11          Solve [13]
+[56]     0.0    0.04    0.00      11         SetMaterialProperties [56]
+-----------------------------------------------
+                0.04    0.00       1/1           MshImportMSH [7]
+[57]     0.0    0.04    0.00       1         MshRemoveBoundaryFaces [57]
+-----------------------------------------------
+                0.04    0.00       1/1           Simulation [12]
+[58]     0.0    0.04    0.00       1         WriteProbeViews [58]
+-----------------------------------------------
+                                                 <spontaneous>
+[59]     0.0    0.04    0.00                 GMRESIter [59]
+-----------------------------------------------
+                                                 <spontaneous>
+[60]     0.0    0.04    0.00                 Q_SortEl [60]
+-----------------------------------------------
+                0.00    0.04 1042560/1042560     potens [55]
+[61]     0.0    0.00    0.04 1042560         signedfactor [61]
+                0.03    0.00 1042560/1042560     factor [62]
+                0.00    0.00 1042560/7297920     eatspace [68]
+-----------------------------------------------
+                0.03    0.00 1042560/1042560     signedfactor [61]
+[62]     0.0    0.03    0.00 1042560         factor [62]
+                0.00    0.00 1042560/7297920     eatspace [68]
+-----------------------------------------------
+                0.03    0.00  920640/920640      MshCalcPropFaces [32]
+[63]     0.0    0.03    0.00  920640         GeoMultScalarVector [63]
+-----------------------------------------------
+                0.03    0.00       1/1           MshImportMSH [7]
+[64]     0.0    0.03    0.00       1         MshCalcPropMesh [64]
+-----------------------------------------------
+                0.03    0.00       1/1           Simulation [12]
+[65]     0.0    0.03    0.00       1         SetInitialFlux [65]
+-----------------------------------------------
+                                                 <spontaneous>
+[66]     0.0    0.03    0.00                 V_Lock [66]
+-----------------------------------------------
+                                                 <spontaneous>
+[67]     0.0    0.03    0.00                 GeoMultVectorVector [67]
+-----------------------------------------------
+                0.00    0.00 1042560/7297920     expression [48]
+                0.00    0.00 1042560/7297920     product [53]
+                0.00    0.00 1042560/7297920     potens [55]
+                0.00    0.00 1042560/7297920     signedfactor [61]
+                0.00    0.00 1042560/7297920     factor [62]
+                0.01    0.00 2085120/7297920     evaluate [42]
+[68]     0.0    0.02    0.00 7297920         eatspace [68]
+-----------------------------------------------
+                0.02    0.00  345600/345600      MshCreateFaces [27]
+[69]     0.0    0.02    0.00  345600         GeoCalcCentroid4 [69]
+-----------------------------------------------
+                0.02    0.00    5120/5120        OctCreateRecursive [15]
+[70]     0.0    0.02    0.00    5120         OctAddLeaf [70]
+-----------------------------------------------
+                0.02    0.00       1/1           MshImportMSH [7]
+[71]     0.0    0.02    0.00       1         MshCorrectNonOrthogonality [71]
+-----------------------------------------------
+                0.02    0.00       1/1           MshImportMSH [7]
+[72]     0.0    0.02    0.00       1         MshGetElementTypes [72]
+-----------------------------------------------
+                                                 <spontaneous>
+[73]     0.0    0.02    0.00                 Asgn_VV [73]
+-----------------------------------------------
+                                                 <spontaneous>
+[74]     0.0    0.02    0.00                 V_Constr [74]
+-----------------------------------------------
+                0.00    0.00  345600/2082240     MshCreateFaces [27]
+                0.00    0.00  575040/2082240     MshCalcPropFaces [32]
+                0.01    0.00 1161600/2082240     CorrectFaceP [33]
+[75]     0.0    0.01    0.00 2082240         GeoDotVectorVector [75]
+-----------------------------------------------
+                0.01    0.00       1/1           main [6]
+[76]     0.0    0.01    0.00       1         MshFreeMemory [76]
+-----------------------------------------------
+                                                 <spontaneous>
+[77]     0.0    0.01    0.00                 Add_QQ [77]
+-----------------------------------------------
+                                                 <spontaneous>
+[78]     0.0    0.01    0.00                 Diag_Q [78]
+-----------------------------------------------
+                                                 <spontaneous>
+[79]     0.0    0.01    0.00                 ILUPrecond [79]
+-----------------------------------------------
+                                                 <spontaneous>
+[80]     0.0    0.01    0.00                 Mul_SV [80]
+-----------------------------------------------
+                                                 <spontaneous>
+[81]     0.0    0.01    0.00                 Q_Destr [81]
+-----------------------------------------------
+                                                 <spontaneous>
+[82]     0.0    0.01    0.00                 Q_Lock [82]
+-----------------------------------------------
+                                                 <spontaneous>
+[83]     0.0    0.01    0.00                 Q_Unlock [83]
+-----------------------------------------------
+                                                 <spontaneous>
+[84]     0.0    0.01    0.00                 GeoCalcCentroid8 [84]
+-----------------------------------------------
+                0.00    0.00   13456/13456       OctCreateRecursive [15]
+[85]     0.0    0.00    0.00   13456         OctCreateNode [85]
+-----------------------------------------------
+                0.00    0.00       2/62          main [6]
+                0.00    0.00      60/62          SolveMatrix [88]
+[86]     0.0    0.00    0.00      62         ttime [86]
+-----------------------------------------------
+                0.00    0.00       5/52          BcdImportBCD [97]
+                0.00    0.00      13/52          MtlImportMTL [101]
+                0.00    0.00      34/52          ParImportPAR [102]
+[87]     0.0    0.00    0.00      52         GetLine [87]
+-----------------------------------------------
+                0.00    0.00      10/30          CalculatePressure [19]
+                0.00    0.00      20/30          CalculateVelocity [26]
+[88]     0.0    0.00    0.00      30         SolveMatrix [88]
+                0.00    0.00      60/62          ttime [86]
+-----------------------------------------------
+                0.00    0.00      10/10          CalculateVelocity [26]
+[89]     0.0    0.00    0.00      10         CalculateCorrectionFactors [89]
+-----------------------------------------------
+                0.00    0.00      10/10          Solve [13]
+[90]     0.0    0.00    0.00      10         CalculateGamma [90]
+-----------------------------------------------
+                0.00    0.00      10/10          Solve [13]
+[91]     0.0    0.00    0.00      10         CalculateTemperature [91]
+-----------------------------------------------
+                0.00    0.00       6/6           BcdImportBCD [97]
+[92]     0.0    0.00    0.00       6         GetEntrySurface [92]
+-----------------------------------------------
+                0.00    0.00       2/2           MshConnectFaces [8]
+[93]     0.0    0.00    0.00       2         OctDestroyOctree [93]
+-----------------------------------------------
+                0.00    0.00       2/2           WriteAsciiVectorElement [50]
+[94]     0.0    0.00    0.00       2         PrintAsciiHeaderVectorElement [94]
+-----------------------------------------------
+                0.00    0.00       2/2           WriteAsciiVectorElement [50]
+[95]     0.0    0.00    0.00       2         PrintAsciiTime [95]
+-----------------------------------------------
+                0.00    0.00       1/1           Simulation [12]
+[96]     0.0    0.00    0.00       1         AllocateMemory [96]
+-----------------------------------------------
+                0.00    0.00       1/1           main [6]
+[97]     0.0    0.00    0.00       1         BcdImportBCD [97]
+                0.00    0.00       6/6           GetEntrySurface [92]
+                0.00    0.00       5/52          GetLine [87]
+                0.00    0.00       1/1           GetEntryVolume [99]
+-----------------------------------------------
+                0.00    0.00       1/1           Simulation [12]
+[98]     0.0    0.00    0.00       1         DeallocateMemory [98]
+-----------------------------------------------
+                0.00    0.00       1/1           BcdImportBCD [97]
+[99]     0.0    0.00    0.00       1         GetEntryVolume [99]
+-----------------------------------------------
+                0.00    0.00       1/1           MshImportMSH [7]
+[100]    0.0    0.00    0.00       1         MshAddBoundaryFaces [100]
+-----------------------------------------------
+                0.00    0.00       1/1           main [6]
+[101]    0.0    0.00    0.00       1         MtlImportMTL [101]
+                0.00    0.00      13/52          GetLine [87]
+-----------------------------------------------
+                0.00    0.00       1/1           main [6]
+[102]    0.0    0.00    0.00       1         ParImportPAR [102]
+                0.00    0.00      34/52          GetLine [87]
+                0.00    0.00       1/1           SetDefaults [103]
+-----------------------------------------------
+                0.00    0.00       1/1           ParImportPAR [102]
+[103]    0.0    0.00    0.00       1         SetDefaults [103]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+
+Index by function name
+
+   [9] AddAsgn_VV             [99] GetEntryVolume         [81] Q_Destr
+  [77] Add_QQ                 [87] GetLine                [82] Q_Lock
+  [96] AllocateMemory         [23] Gradient               [40] Q_SetEntry
+  [73] Asgn_VV                [31] ILUFactor              [47] Q_SetLen
+  [97] BcdImportBCD           [79] ILUPrecond             [60] Q_SortEl
+  [24] BuildContinuityMatrix  [30] LASResult              [83] Q_Unlock
+  [25] BuildMomentumMatrix   [100] MshAddBoundaryFaces    [38] SetBoundary
+  [89] CalculateCorrectionFactors [32] MshCalcPropFaces  [103] SetDefaults
+  [90] CalculateGamma         [64] MshCalcPropMesh        [54] SetInitialConditions
+  [19] CalculatePressure       [8] MshConnectFaces        [65] SetInitialFlux
+  [91] CalculateTemperature   [71] MshCorrectNonOrthogonality [56] SetMaterialProperties
+  [26] CalculateVelocity      [27] MshCreateFaces         [12] Simulation
+  [33] CorrectFaceP           [76] MshFreeMemory          [13] Solve
+  [29] CorrectFaceUVW         [72] MshGetElementTypes     [88] SolveMatrix
+  [18] CorrectVelocity         [7] MshImportMSH            [4] SubAsgn_VV
+  [22] CorrectVelocityField   [57] MshRemoveBoundaryFaces [20] Sub_VV
+  [98] DeallocateMemory      [101] MtlImportMTL           [74] V_Constr
+  [78] Diag_Q                 [16] MulAsgn_VS             [28] V_GetCmp
+  [46] ElCompar                [1] MulInv_QV              [66] V_Lock
+  [59] GMRESIter               [2] Mul_QV                  [5] V_SetAllCmp
+  [44] GeoAddVectorVector     [80] Mul_SV                 [34] V_SetCmp
+  [69] GeoCalcCentroid4        [3] Mul_VV                 [52] V_Unlock
+  [84] GeoCalcCentroid8       [70] OctAddLeaf             [50] WriteAsciiVectorElement
+  [37] GeoCalcNormal          [85] OctCreateNode          [58] WriteProbeViews
+  [35] GeoCalcQuadArea        [14] OctCreateOctree        [51] WriteResults
+  [36] GeoCalcTriArea         [15] OctCreateRecursive     [68] eatspace
+  [43] GeoCrossVector         [93] OctDestroyOctree       [42] evaluate
+  [75] GeoDotVectorVector     [17] OctDispatch            [48] expression
+  [11] GeoMagVector          [102] ParImportPAR           [62] factor
+  [63] GeoMultScalarVector    [94] PrintAsciiHeaderVectorElement [10] l2Norm_V
+  [67] GeoMultVectorVector    [95] PrintAsciiTime         [55] potens
+  [41] GeoNormalizeVector     [49] PrintAsciiVectorElement [53] product
+  [21] GeoSubVectorVector     [39] Q_AllocInvDiagEl       [61] signedfactor
+  [92] GetEntrySurface        [45] Q_Constr               [86] ttime

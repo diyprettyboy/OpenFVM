@@ -1,0 +1,64 @@
+$TITL OpenFVM 
+$FILE Parameter file
+$PRMT 1 29 Description of $CODE
+30005 1 Convection interpolation scheme
+1
+30020 1 Binary output
+1
+30030 1 Time advancement method (u v w p T s)
+1 1 1 1 1 1
+30031 1 Explicit factor (u v w p T s)
+1.0 1.0 1.0 1.0 1.0 1.0
+30040 1 Calculate variable (u v w p T s)
+1 1 1 1 0 1
+30090 1 Stability factor 
+10000.0
+30100 1 Steady state
+0
+30105 1 Convergence for steady state solutions 
+1E-6 
+30200 1 Adjust time interval
+1
+30201 1 Maxmimum Courant number
+0.25
+30400 1 Number of saves
+50
+30450 1 Write face scalars (u v w p T s)
+0 0 0 0 0 0
+30455 1 Write face vectors (uvw)
+0
+30460 1 Write element scalars (u v w p T s)
+0 0 0 1 0 1
+30465 1 Write element vectors (uvw)
+1
+30470 1 Write vorticity (x y z)
+0 0 0
+30485 1 Probe (u v w p T s)
+0 0 0 0 0 0
+30550 1 Maximum number of non-othorgonal corrections
+0
+30551 1 Orthogonal factor
+0.0
+30600 1 Convergence criterion (matrix solution)
+1E-8 1E-8 1E-8 1E-8 1E-8 1E-8
+30601 1 Maximum number of iterations (matrix solution)
+500 500 500 500 500 500
+30650 1 Matrix solver (u v w p T s) (0-Jacobi, 1-SOR, 2-CGN, 3-GMRES, 4-BiCG, 5-QMR, 6-CGS, 7-BiCGStab, 8-BiCGStabM) 
+7 7 7 7 7 3
+30651 1 Matrix preconditioner (0-Null, 1-Jacobi, 2-SOR, 3-ILU)
+3 3 3 3 3 3
+30800 1 Interface scheme factor - CICSAM
+1.0
+30900 1 Maximum number of CICSAM corrections
+2
+32000 1 Start time
+0.0
+32001 1 End time
+2.5
+32002 1 Time interval
+0.0001
+34000 1 Gravity vector
+0.0 0.0 0.0
+$ENDF
+
+

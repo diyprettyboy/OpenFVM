@@ -1,0 +1,226 @@
+/********************************************************************* 
+ *
+ *  Lid-Driven Cavity Gmsh Script
+ *
+ *********************************************************************/
+
+// Include "lid3D.geo"; 
+
+/******** Single processor ********/
+
+//Include "lid3D.prb";
+
+/******** Multiple regions ********/
+
+Include "lid3D.000.prb";
+Include "lid3D.001.prb";
+Include "lid3D.002.prb";
+Include "lid3D.003.prb";
+Include "lid3D.004.prb";
+Include "lid3D.005.prb";
+Include "lid3D.006.prb";
+Include "lid3D.007.prb";
+/*
+Include "lid3D.008.prb";
+Include "lid3D.009.prb";
+Include "lid3D.010.prb";
+Include "lid3D.011.prb";
+Include "lid3D.012.prb";
+Include "lid3D.013.prb";
+Include "lid3D.014.prb";
+Include "lid3D.015.prb";
+Include "lid3D.016.prb";
+Include "lid3D.017.prb";
+Include "lid3D.018.prb";
+Include "lid3D.019.prb";
+Include "lid3D.020.prb";
+Include "lid3D.021.prb";
+Include "lid3D.022.prb";
+Include "lid3D.023.prb";
+Include "lid3D.024.prb";
+Include "lid3D.025.prb";
+Include "lid3D.026.prb";
+Include "lid3D.027.prb";
+Include "lid3D.028.prb";
+Include "lid3D.029.prb";
+Include "lid3D.030.prb";
+Include "lid3D.031.prb";
+Include "lid3D.032.prb";
+Include "lid3D.033.prb";
+Include "lid3D.034.prb";
+Include "lid3D.035.prb";
+Include "lid3D.036.prb";
+Include "lid3D.037.prb";
+Include "lid3D.038.prb";
+Include "lid3D.039.prb";
+Include "lid3D.040.prb";
+Include "lid3D.041.prb";
+Include "lid3D.042.prb";
+Include "lid3D.043.prb";
+Include "lid3D.044.prb";
+Include "lid3D.045.prb";
+Include "lid3D.046.prb";
+Include "lid3D.047.prb";
+Include "lid3D.048.prb";
+Include "lid3D.049.prb";
+Include "lid3D.050.prb";
+Include "lid3D.051.prb";
+Include "lid3D.052.prb";
+Include "lid3D.053.prb";
+Include "lid3D.054.prb";
+Include "lid3D.055.prb";
+Include "lid3D.056.prb";
+Include "lid3D.057.prb";
+Include "lid3D.058.prb";
+Include "lid3D.059.prb";
+Include "lid3D.060.prb";
+Include "lid3D.061.prb";
+Include "lid3D.062.prb";
+Include "lid3D.063.prb";
+Include "lid3D.064.prb";
+Include "lid3D.065.prb";
+Include "lid3D.066.prb";
+Include "lid3D.067.prb";
+Include "lid3D.068.prb";
+Include "lid3D.069.prb";
+Include "lid3D.070.prb";
+Include "lid3D.071.prb";
+Include "lid3D.072.prb";
+Include "lid3D.073.prb";
+Include "lid3D.074.prb";
+Include "lid3D.075.prb";
+Include "lid3D.076.prb";
+Include "lid3D.077.prb";
+Include "lid3D.078.prb";
+Include "lid3D.079.prb";
+*/
+
+Combine Views;
+
+Plugin(Smooth).Run;
+
+nbviews = PostProcessing.NbViews;
+
+View[0].Name = "U-Velocity(m/s)";
+View[0].Visible = 0;
+
+Plugin(CutGrid).X0 = 0.5;
+Plugin(CutGrid).Y0 = 0.0;
+Plugin(CutGrid).Z0 = 2.5;
+Plugin(CutGrid).X1 = 1.0;
+Plugin(CutGrid).Y1 = 1.0;
+Plugin(CutGrid).Z1 = 2.5;
+Plugin(CutGrid).X2 = 0.5;
+Plugin(CutGrid).Y2 = 1.0;
+Plugin(CutGrid).Z2 = 2.5;
+Plugin(CutGrid).nPointsU = 1;
+Plugin(CutGrid).nPointsV = 250;
+Plugin(CutGrid).ConnectPoints = 0;
+Plugin(CutGrid).iView = -1;
+
+Plugin(CutGrid).Run;
+
+View[1].Axes = 2;
+View[1].Type = 2;
+View[1].IntervalsType = 2;
+View[1].Name = "U-Velocity(m/s) - Centerline";
+View[1].AxesLabelX = "U/U0";
+View[1].AxesLabelY = "y/y0";
+
+Include "ghia.prb";
+
+View[2].Axes = 2;
+View[2].Type = 2;
+View[2].IntervalsType = 1;
+View[2].Name = "Ghia et. al Re = 100 - Centerline";
+View[2].AxesLabelX = "U/U0";
+View[2].AxesLabelY = "y/y0";
+
+View[3].Axes = 2;
+View[3].Type = 2;
+View[3].IntervalsType = 1;
+View[3].Name = "Ghia et. al Re = 400 - Centerline";
+View[3].AxesLabelX = "U/U0";
+View[3].AxesLabelY = "y/y0";
+
+View[4].Axes = 2;
+View[4].Type = 2;
+View[4].IntervalsType = 1;
+View[4].Name = "Ghia et. al Re = 1000 - Centerline";
+View[4].AxesLabelX = "U/U0";
+View[4].AxesLabelY = "y/y0";
+
+View[5].Axes = 2;
+View[5].Type = 2;
+View[5].IntervalsType = 1;
+View[5].Name = "Ghia et. al Re = 3200 - Centerline";
+View[5].AxesLabelX = "U/U0";
+View[5].AxesLabelY = "y/y0";
+
+View[6].Axes = 2;
+View[6].Type = 2;
+View[6].IntervalsType = 1;
+View[6].Name = "Ghia et. al Re = 5000 - Centerline";
+View[6].AxesLabelX = "U/U0";
+View[6].AxesLabelY = "y/y0";
+
+View[7].Axes = 2;
+View[7].Type = 2;
+View[7].IntervalsType = 1;
+View[7].Name = "Ghia et. al Re = 7500 - Centerline";
+View[7].AxesLabelX = "U/U0";
+View[7].AxesLabelY = "y/y0";
+
+View[8].Axes = 2;
+View[8].Type = 2;
+View[8].IntervalsType = 1;
+View[8].Name = "Ghia et. al Re = 10000 - Centerline";
+View[8].AxesLabelX = "U/U0";
+View[8].AxesLabelY = "y/y0";
+
+// Set visibility of Ghia's data
+View[2].Visible = 1;
+View[3].Visible = 0;
+View[4].Visible = 0;
+View[5].Visible = 0;
+View[6].Visible = 0;
+View[7].Visible = 0;
+View[8].Visible = 0;
+
+PostProcessing.Format = 4;
+
+// Save results to graph for using gnuplot
+Save View[1] "lid3D.txt";
+
+// Save Ghia's results to graph using gnuplot
+// Re = 100
+Save View[2] "ghia.txt";
+
+// Save Ghia's results to graph using gnuplot
+// Re = 400
+// Save View[3] "ghia.txt";
+
+// Save Ghia's results to graph using gnuplot
+// Re = 1000
+// Save View[4] "ghia.txt";
+
+// Save Ghia's results to graph using gnuplot
+// Re = 3200
+// Save View[5] "ghia.txt";
+
+// Save Ghia's results to graph using gnuplot
+// Re = 5000
+// Save View[6] "ghia.txt";
+
+// Save Ghia's results to graph using gnuplot
+// Re = 7500
+// Save View[7] "ghia.txt";
+
+// Save Ghia's results to graph using gnuplot
+// Re = 10000
+// Save View[8] "ghia.txt";
+
+System "gnuplot lid3D.gph";
+
+
+

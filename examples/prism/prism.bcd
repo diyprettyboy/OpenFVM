@@ -1,0 +1,9 @@
+$TITL OpenFVM
+$FILE Boundary conditions file
+$BOUND 1 2 Description of $CODE
+10100 1 Inlet - Physical surfaces (ID u v w p T s) 
+      73 0.0 0.0 1.0 0.0 0.0 1.0
+10150 1 Outlet - Physical surfaces
+      74 0.0 0.0 0.0 0.0 0.0 0.0 (ID u v w p T s) 
+$ENDF
+

@@ -1,0 +1,14 @@
+#set terminal postscript eps            # set output to eps file
+set xtic auto                          # set xtics automatically
+set ytic auto                          # set ytics automatically
+set title 'v-Velocity profile along horizontal centerline of the lid-driven cavity at Re = 100'
+set xlabel 'v/v0'
+set ylabel 'y/y0'
+set xrange[-0.4:1.0]
+set yrange[0.0:1.0]
+set key 0.8,0.6
+set pointsize 1
+#set output 'testlidp1.eps' 
+plot 'testlidp1_v.txt' using 4:1 title 'Parallel version - 1 processor' with lines 1, 'ghia_v.txt' using 4:1 title 'Ghia et al., 1982' with points 1
+pause -1
+
