@@ -58,6 +58,7 @@ LASPACK_LIB = ../external/laspack/liblaspack.a
 LASPACK_INC = ../external/laspack
 
 # METIS
+#METIS_LIB = $(METIS_DIR)/$(METIS_ARCH)/libmetis.a
 METIS_LIB = ../external/metis-4.0.3/libmetis.a
 
 # Debug: -g Profiling: -pg Performance: -O2 
@@ -65,7 +66,7 @@ CFLAGS = -I$(SOURCE_DIR) -I$(LASPACK_INC) -O2
 
 CC = gcc
 
-EXECUTABLE = ../bin/OpenFVM
+EXECUTABLE = ../bin/OpenFVM-laspack
 
 all: $(SOURCE_OBJ) $(LASPACK_OBJ)
 
@@ -73,7 +74,7 @@ all: $(SOURCE_OBJ) $(LASPACK_OBJ)
 	@echo "***** Building OpenFVM-Flow serial version *****"
 	@echo ""
 
-	$(CC) $(CFLAGS) $(SOURCE_OBJ) $(LASPACK_LIB)  $(METIS_LIB) -o $(EXECUTABLE) -lm
+	$(CC) $(CFLAGS) $(SOURCE_OBJ) $(LASPACK_LIB) $(METIS_LIB) -o $(EXECUTABLE) -lm
 
 $(OBJ_DIR)/bcond.o: $(SOURCE_DIR)/bcond.c
 	$(CC) $(CFLAGS) -c $(SOURCE_DIR)/bcond.c -o $(OBJ_DIR)/bcond.o
