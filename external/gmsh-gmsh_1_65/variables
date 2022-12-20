@@ -1,0 +1,62 @@
+# $Id: variables.in,v 1.13 2006-02-24 22:07:05 geuzaine Exp $
+#
+# Copyright (C) 1997-2006 C. Geuzaine, J.-F. Remacle
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
+# USA.
+# 
+# Please report all bugs and problems to <gmsh@geuz.org>.
+
+# OS
+UNAME=Linux
+
+# The names of the C and C++ compilers
+CC=gcc
+CXX=g++
+
+# If you need to link to dynamic libraries installed in non-standard
+# locations and are using the GNU linker, you may want to add
+# '-Wl,--rpath,/path/to/dynamic/library' to the 'LINKER' variable
+# below. Alternatively, you could edit the 'LD_LIBARY_PATH'
+# environement variable or use the 'ldconfig' program.
+LINKER=g++
+
+# Compiler flags
+FLAGS=-DHAVE_MATH_EVAL -DHAVE_TETGEN -DHAVE_NETGEN -DHAVE_METIS -DHAVE_ANN_ -DHAVE_TRIANGLE 
+OPTIM=-g -O2
+
+# Gmsh subdirectories and libraries
+GMSH_DIRS=Common DataStr Geo Mesh Numeric Parallel Parser Plugin Box contrib/Triangle contrib/ANN contrib/Metis contrib/Netgen contrib/Tetgen contrib/MathEval contrib/NR
+GMSH_LIBS=-Llib -lGmshBox -lGmshParser -lGmshMesh -lGmshGeo -lGmshPlugin -lGmshCommon -lGmshDataStr -lGmshNumeric -lGmshParallel -lGmshTriangle -lGmshANN -lGmshMetis -lGmshNetgen -lGmshTetgen -lGmshMathEval -lGmshNR -lm
+
+# How you create a static library on this machine
+AR=/usr/bin/ar ruvs
+RANLIB=ranlib
+
+# The extension to use for executables...
+EXEEXT=
+
+# Any operation to perform on the executable after the link
+POSTBUILD=
+
+# Installation directories
+prefix=/usr/local
+exec_prefix=${prefix}
+bindir=${exec_prefix}/bin
+datadir=${prefix}/share
+includedir=${prefix}/include
+libdir=${exec_prefix}/lib
+mandir=${prefix}/man
+infodir=${prefix}/info
