@@ -3,7 +3,7 @@ OBJ_DIR = debug
 
 SOURCE_DIR = src
 
-third_party = external
+third_party = ../../external
 
 SOURCE_FILES = $(SOURCE_DIR)/bcond.c \
 	$(SOURCE_DIR)/geocalc.c \
@@ -33,7 +33,7 @@ SOURCE_OBJ = $(OBJ_DIR)/bcond.o \
 LASPACK_DIR = $(third_party)/LASPack 
 LASPACK_LIB = $(third_party)/LASPack/laspack/liblaspack.a
 
-EXECUTABLE = bin/OpenFVM
+EXECUTABLE = ../../bin/OpenFVM-serial-v0.2
 
 CC = gcc
 CFLAGS = -I$(SOURCE_DIR) -I$(LASPACK_DIR) -O2
