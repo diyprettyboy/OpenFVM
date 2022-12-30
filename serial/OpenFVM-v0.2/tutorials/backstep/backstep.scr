@@ -1,0 +1,261 @@
+/********************************************************************* 
+ *
+ *  Backstep Gmsh Script
+ *
+ *********************************************************************/
+
+// Include "backstep.geo"; 
+
+/******** Single processor ********/
+
+Include "backstep.prb";
+
+/******** Multiple regions ********/
+
+// Include "backstep.000.prb";
+// Include "backstep.001.prb";
+// Include "backstep.002.prb";
+// Include "backstep.003.prb";
+// Include "backstep.004.prb";
+// Include "backstep.005.prb";
+// Include "backstep.006.prb";
+// Include "backstep.007.prb";
+// Include "backstep.008.prb";
+// Include "backstep.009.prb";
+// Include "backstep.010.prb";
+// Include "backstep.011.prb";
+// Include "backstep.012.prb";
+// Include "backstep.013.prb";
+// Include "backstep.014.prb";
+// Include "backstep.015.prb";
+// Include "backstep.016.prb";
+// Include "backstep.017.prb";
+// Include "backstep.018.prb";
+// Include "backstep.019.prb";
+// Include "backstep.020.prb";
+// Include "backstep.021.prb";
+// Include "backstep.022.prb";
+// Include "backstep.023.prb";
+// Include "backstep.024.prb";
+// Include "backstep.025.prb";
+// Include "backstep.026.prb";
+// Include "backstep.027.prb";
+// Include "backstep.028.prb";
+// Include "backstep.029.prb";
+// Include "backstep.030.prb";
+// Include "backstep.031.prb";
+// Include "backstep.032.prb";
+// Include "backstep.033.prb";
+// Include "backstep.034.prb";
+// Include "backstep.035.prb";
+// Include "backstep.036.prb";
+// Include "backstep.037.prb";
+// Include "backstep.038.prb";
+// Include "backstep.039.prb";
+// Include "backstep.040.prb";
+// Include "backstep.041.prb";
+// Include "backstep.042.prb";
+// Include "backstep.043.prb";
+// Include "backstep.044.prb";
+// Include "backstep.045.prb";
+// Include "backstep.046.prb";
+// Include "backstep.047.prb";
+// Include "backstep.048.prb";
+// Include "backstep.049.prb";
+// Include "backstep.050.prb";
+// Include "backstep.051.prb";
+// Include "backstep.052.prb";
+// Include "backstep.053.prb";
+// Include "backstep.054.prb";
+// Include "backstep.055.prb";
+// Include "backstep.056.prb";
+// Include "backstep.057.prb";
+// Include "backstep.058.prb";
+// Include "backstep.059.prb";
+// Include "backstep.060.prb";
+// Include "backstep.061.prb";
+// Include "backstep.062.prb";
+// Include "backstep.063.prb";
+// Include "backstep.064.prb";
+// Include "backstep.065.prb";
+// Include "backstep.066.prb";
+// Include "backstep.067.prb";
+// Include "backstep.068.prb";
+// Include "backstep.069.prb";
+// Include "backstep.070.prb";
+// Include "backstep.071.prb";
+// Include "backstep.072.prb";
+// Include "backstep.073.prb";
+// Include "backstep.074.prb";
+// Include "backstep.075.prb";
+// Include "backstep.076.prb";
+// Include "backstep.077.prb";
+// Include "backstep.078.prb";
+// Include "backstep.079.prb";
+
+// Combine Views;
+
+nbviews = PostProcessing.NbViews;
+
+View[0].Name = "U-Velocity(m/s)";
+View[0].Visible = 0;
+
+h = 0.0127;
+
+For vi In {1:20}
+
+  If (vi == 1)  x = -4.0*h; EndIf
+  If (vi == 2)  x = +0.0*h; EndIf
+  If (vi == 3)  x = +1.0*h; EndIf
+  If (vi == 4)  x = +1.5*h; EndIf
+  If (vi == 5)  x = +2.0*h; EndIf
+  If (vi == 6)  x = +2.5*h; EndIf
+  If (vi == 7)  x = +3.0*h; EndIf
+  If (vi == 8)  x = +4.0*h; EndIf
+  If (vi == 9)  x = +5.0*h; EndIf
+  If (vi == 10) x = +5.5*h; EndIf
+  If (vi == 11) x = +6.0*h; EndIf
+  If (vi == 12) x = +6.5*h; EndIf
+  If (vi == 13) x = +7.0*h; EndIf
+  If (vi == 14) x = +8.0*h; EndIf
+  If (vi == 15) x = +10.0*h; EndIf
+  If (vi == 16) x = +12.0*h; EndIf
+  If (vi == 17) x = +14.0*h; EndIf
+  If (vi == 18) x = +16.0*h; EndIf
+  If (vi == 19) x = +20.0*h; EndIf
+  If (vi == 20) x = +32.0*h; EndIf
+  
+  If (vi <= 2)         
+    Plugin(CutGrid).X0 = x;
+    Plugin(CutGrid).Y0 = h;
+    Plugin(CutGrid).Z0 = 6*h;
+    Plugin(CutGrid).X1 = x;
+    Plugin(CutGrid).Y1 = h;
+    Plugin(CutGrid).Z1 = 6*h;
+    Plugin(CutGrid).X2 = x;
+    Plugin(CutGrid).Y2 = 9*h;
+    Plugin(CutGrid).Z2 = 6*h;
+    Plugin(CutGrid).nPointsU = 1;
+    Plugin(CutGrid).nPointsV = 150;
+    Plugin(CutGrid).ConnectPoints = 0;
+    Plugin(CutGrid).iView = -1;
+  EndIf
+
+  If (vi > 2)         
+    Plugin(CutGrid).X0 = x;
+    Plugin(CutGrid).Y0 = 0;
+    Plugin(CutGrid).Z0 = 6*h;
+    Plugin(CutGrid).X1 = x;
+    Plugin(CutGrid).Y1 = 0;
+    Plugin(CutGrid).Z1 = 6*h;
+    Plugin(CutGrid).X2 = x;
+    Plugin(CutGrid).Y2 = 9*h;
+    Plugin(CutGrid).Z2 = 6*h;
+    Plugin(CutGrid).nPointsU = 1;
+    Plugin(CutGrid).nPointsV = 150;
+    Plugin(CutGrid).ConnectPoints = 0;
+    Plugin(CutGrid).iView = -1;
+  EndIf
+   
+  Plugin(CutGrid).Run;
+
+  If (vi == 1) View[vi].Name = "x/H = -4"; EndIf
+  If (vi == 2) View[vi].Name = "x/H = 0"; EndIf
+  If (vi == 3) View[vi].Name = "x/H = 1"; EndIf
+  If (vi == 4) View[vi].Name = "x/H = 1.5"; EndIf
+  If (vi == 5) View[vi].Name = "x/H = 2";  EndIf
+  If (vi == 6) View[vi].Name = "x/H = 2.5";  EndIf
+  If (vi == 7) View[vi].Name = "x/H = 3";  EndIf
+  If (vi == 8) View[vi].Name = "x/H = 4";  EndIf
+  If (vi == 9) View[vi].Name = "x/H = 5";  EndIf
+  If (vi == 10) View[vi].Name = "x/H = 5.5";  EndIf
+  If (vi == 11) View[vi].Name = "x/H = 6";  EndIf
+  If (vi == 12) View[vi].Name = "x/H = 6.5";  EndIf
+  If (vi == 13) View[vi].Name = "x/H = 7";  EndIf
+  If (vi == 14) View[vi].Name = "x/H = 8";  EndIf
+  If (vi == 15) View[vi].Name = "x/H = 10";  EndIf
+  If (vi == 16) View[vi].Name = "x/H = 12";  EndIf
+  If (vi == 17) View[vi].Name = "x/H = 14";  EndIf
+  If (vi == 18) View[vi].Name = "x/H = 16";  EndIf
+  If (vi == 19) View[vi].Name = "x/H = 20";  EndIf
+  If (vi == 20) View[vi].Name = "x/H = 32";  EndIf
+           
+  View[vi].Axes = 2;
+  View[vi].Type = 2;
+  View[vi].IntervalsType = 2;
+  View[vi].AxesLabelX = "U";
+  View[vi].AxesLabelY = "y";
+
+EndFor
+
+Include "driver.prb";
+
+For vi In {20:40}
+
+  View[vi].Axes = 2;
+  View[vi].Type = 2;
+  View[vi].IntervalsType = 1;
+  View[vi].AxesLabelX = "U";
+  View[vi].AxesLabelY = "y";
+
+EndFor
+
+For vi In {1:40}
+
+  View[vi].Visible = 0;
+
+EndFor
+
+// x/H = -4
+vi = 1;
+View[vi].Visible = 1;
+View[vi+20].Visible = 1;
+
+PostProcessing.Format = 4;
+
+// Save results to graph for using gnuplot
+Save View[1]  "backstep01.txt";
+Save View[2]  "backstep02.txt";
+Save View[3]  "backstep03.txt";
+Save View[4]  "backstep04.txt";
+Save View[5]  "backstep05.txt";
+Save View[6]  "backstep06.txt";
+Save View[7]  "backstep07.txt";
+Save View[8]  "backstep08.txt";
+Save View[9]  "backstep09.txt";
+Save View[10] "backstep10.txt";
+Save View[11] "backstep11.txt";
+Save View[12] "backstep12.txt";
+Save View[13] "backstep13.txt";
+Save View[14] "backstep14.txt";
+Save View[15] "backstep15.txt";
+Save View[16] "backstep16.txt";
+Save View[17] "backstep17.txt";
+Save View[18] "backstep18.txt";
+Save View[19] "backstep19.txt";
+Save View[20] "backstep20.txt";
+
+Save View[21] "driver01.txt";
+Save View[22] "driver02.txt";
+Save View[23] "driver03.txt";
+Save View[24] "driver04.txt";
+Save View[25] "driver05.txt";
+Save View[26] "driver06.txt";
+Save View[27] "driver07.txt";
+Save View[28] "driver08.txt";
+Save View[29] "driver09.txt";
+Save View[30] "driver10.txt";
+Save View[31] "driver11.txt";
+Save View[32] "driver12.txt";
+Save View[33] "driver13.txt";
+Save View[34] "driver14.txt";
+Save View[35] "driver15.txt";
+Save View[36] "driver16.txt";
+Save View[37] "driver17.txt";
+Save View[38] "driver18.txt";
+Save View[39] "driver19.txt";
+Save View[40] "driver20.txt";
+
+System "gnuplot backstep.gph";
+
+

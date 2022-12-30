@@ -1,0 +1,175 @@
+set terminal postscript eps            # set output to eps file
+set xtic auto                          # set xtics automatically
+set ytic auto                          # set ytics automatically
+#set title 'Velocity profiles at the centerline of the lid-driven cavity'
+set xrange[-50:50]
+set yrange[0.0:0.12]
+set size 2.15,1.0
+set xtics 0,25
+set pointsize 1
+set output 'backstep.eps' 
+set multiplot
+#set xlabel 'U'
+set xtics nomirror
+set ytics nomirror
+
+set arrow from 0.0,0.0 to 0.0,0.12 nohead linetype 3
+
+#set format x ''
+set rmargin 0
+
+set origin 0.0,0.0
+set size 0.2,1.0
+set label 1 'x/H=-4' at 10,0.11717
+set border 7
+set ylabel 'y (m)'
+plot \
+     'backstep01.txt' using 4:2 notitle with lines 1, \
+     'driver01.txt' using 4:2 notitle with points 1
+set ylabel ''
+
+set noytic
+set border 5
+set lmargin 0
+set rmargin 0
+set format y ''
+
+set origin 0.2,0.0
+set size 0.1,1.0
+set label 1 'x/H=0' at 10,0.11717
+plot \
+     'backstep02.txt' using 4:2 notitle with lines 1, \
+     'driver02.txt' using 4:2 notitle with points 1
+set ylabel ''
+
+set origin 0.3,0.0
+set size 0.1,1.0
+set label 1 'x/H=1' at 10,0.11717
+plot \
+     'backstep03.txt' using 4:2 notitle with lines 1, \
+     'driver03.txt' using 4:2 notitle with points 1
+
+set origin 0.4,0.0
+set size 0.1,1.0
+set label 1 'x/H=1.5' at 10,0.11717
+plot \
+     'backstep04.txt' using 4:2 notitle with lines 1, \
+     'driver04.txt' using 4:2 notitle with points 1
+
+set origin 0.5,0.0
+set size 0.1,1.0
+set label 1 'x/H=2' at 10,0.117
+plot \
+     'backstep05.txt' using 4:2 notitle with lines 1, \
+     'driver05.txt' using 4:2 notitle with points 1
+
+set origin 0.6,0.0
+set size 0.1,1.0
+set label 1 'x/H=2.5' at 10,0.117
+plot \
+     'backstep06.txt' using 4:2 notitle with lines 1, \
+     'driver06.txt' using 4:2 notitle with points 1
+
+set origin 0.7,0.0
+set size 0.1,1.0
+set label 1 'x/H=3' at 10,0.117
+plot \
+     'backstep07.txt' using 4:2 notitle with lines 1, \
+     'driver07.txt' using 4:2 notitle with points 1
+
+set origin 0.8,0.0
+set size 0.1,1.0
+set label 1 'x/H=4' at 10,0.117
+plot \
+     'backstep08.txt' using 4:2 notitle with lines 1, \
+     'driver08.txt' using 4:2 notitle with points 1
+
+set origin 0.9,0.0
+set size 0.1,1.0
+set label 1 'x/H=5' at 10,0.117
+plot \
+     'backstep09.txt' using 4:2 notitle with lines 1, \
+     'driver09.txt' using 4:2 notitle with points 1
+
+set origin 1.0,0.0
+set size 0.1,1.0
+set label 1 'x/H=5.5' at 10,0.117
+plot \
+     'backstep10.txt' using 4:2 notitle with lines 1, \
+     'driver10.txt' using 4:2 notitle with points 1
+
+set origin 1.1,0.0
+set size 0.1,1.0
+set label 1 'x/H=6' at 10,0.117
+plot \
+     'backstep11.txt' using 4:2 notitle with lines 1, \
+     'driver11.txt' using 4:2 notitle with points 1
+
+set origin 1.2,0.0
+set size 0.1,1.0
+set label 1 'x/H=6.5' at 10,0.117
+plot \
+     'backstep12.txt' using 4:2 notitle with lines 1, \
+     'driver12.txt' using 4:2 notitle with points 1
+
+set origin 1.3,0.0
+set size 0.1,1.0
+set label 1 'x/H=7' at 10,0.117
+plot \
+     'backstep13.txt' using 4:2 notitle with lines 1, \
+     'driver13.txt' using 4:2 notitle with points 1
+     
+set origin 1.4,0.0
+set size 0.1,1.0
+set label 1 'x/H=8' at 10,0.117
+plot \
+     'backstep14.txt' using 4:2 notitle with lines 1, \
+     'driver14.txt' using 4:2 notitle with points 1
+
+set origin 1.5,0.0
+set size 0.1,1.0
+set label 1 'x/H=10' at 10,0.117
+plot \
+     'backstep15.txt' using 4:2 notitle with lines 1, \
+     'driver15.txt' using 4:2 notitle with points 1
+     
+set origin 1.6,0.0
+set size 0.1,1.0
+set label 1 'x/H=12' at 10,0.117
+plot \
+     'backstep16.txt' using 4:2 notitle with lines 1, \
+     'driver16.txt' using 4:2 notitle with points 1
+
+set origin 1.7,0.0
+set size 0.1,1.0
+set label 1 'x/H=14' at 10,0.117
+plot \
+     'backstep17.txt' using 4:2 notitle with lines 1, \
+     'driver17.txt' using 4:2 notitle with points 1
+     
+set origin 1.8,0.0
+set size 0.1,1.0
+set label 1 'x/H=16' at 10,0.117
+plot \
+     'backstep18.txt' using 4:2 notitle with lines 1, \
+     'driver18.txt' using 4:2 notitle with points 1
+     
+set origin 1.9,0.0
+set size 0.1,1.0
+set label 1 'x/H=20' at 10,0.117
+plot \
+     'backstep19.txt' using 4:2 notitle with lines 1, \
+     'driver19.txt' using 4:2 notitle with points 1
+     
+set origin 2.0,0.0
+set size 0.1,1.0
+set border 13
+set label 1 'x/H=32' at 10,0.117
+plot \
+     'backstep20.txt' using 4:2 notitle with lines 1, \
+     'driver20.txt' using 4:2 notitle with points 1
+                                                            
+set nomultiplot
+
+#pause -1
+

@@ -1,0 +1,33 @@
+/********************************************************************* 
+ *
+ *  Slosh Gmsh Script
+ *
+ *********************************************************************/
+
+//Include "slosh.geo";
+
+Include "slosh.prb";
+
+View[0].Axes = 0;
+View[0].Boundary = 1;
+
+General.ScaleX = 1.6;
+General.ScaleY = 1.6;
+General.ScaleZ = 1.6;
+
+General.TranslationX -= 0.19;
+//General.TranslationY += 0.1;
+
+For nStep In {0:19}
+    
+    View[0].TimeStep = nStep;
+
+    Draw; // draw the scene
+
+    //Sleep 0.1; // sleep for 0.1 second
+        
+    Print Sprintf("slosh-%02g.eps", nStep);
+        
+EndFor
+
+//System "./whirlgif -minimize -loop -o slosh.gif slosh-*.gif";
