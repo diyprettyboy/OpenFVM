@@ -1,7 +1,0 @@
-PETSC options:
-
--log_summary - print summary report 
--info        - print info about processes  
--ksp_view    - print info about solvers
-
-

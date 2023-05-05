@@ -3,7 +3,7 @@ OBJ_DIR = debug
 
 SOURCE_DIR = src
 
-third_party = ../../external
+third_party = ../../thirdParty
 
 SOURCE_FILES = $(SOURCE_DIR)/bcond.c \
 	$(SOURCE_DIR)/geocalc.c \

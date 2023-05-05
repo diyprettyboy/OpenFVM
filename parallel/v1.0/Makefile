@@ -20,15 +20,17 @@ SOURCE_FILES = $(SOURCE_DIR)/bcond.c \
 	$(SOURCE_DIR)/parser.c \
 	$(SOURCE_DIR)/gradient.c \
 	$(SOURCE_DIR)/restart.c \
+	$(SOURCE_DIR)/vector.c \
+	$(SOURCE_DIR)/matrix.c \
+	$(SOURCE_DIR)/itersolv.c \
 	$(SOURCE_DIR)/setup.c \
 	$(SOURCE_DIR)/solve.c \
-	$(SOURCE_DIR)/ttime.c \
 	$(SOURCE_DIR)/gamma.c \
 	$(SOURCE_DIR)/velocity.c \
 	$(SOURCE_DIR)/pressure.c \
 	$(SOURCE_DIR)/temperature.c \
 	$(SOURCE_DIR)/msolver.c \
-	$(SOURCE_DIR)/fill.c
+	$(SOURCE_DIR)/fill.c 
 
 SOURCE_OBJ = $(OBJ_DIR)/bcond.o \
 	$(OBJ_DIR)/geocalc.o \
@@ -45,9 +47,11 @@ SOURCE_OBJ = $(OBJ_DIR)/bcond.o \
 	$(OBJ_DIR)/parser.o \
 	$(OBJ_DIR)/gradient.o \
 	$(OBJ_DIR)/restart.o \
+	$(OBJ_DIR)/vector.o \
+	$(OBJ_DIR)/matrix.o \
+	$(OBJ_DIR)/itersolv.o \
 	$(OBJ_DIR)/setup.o \
 	$(OBJ_DIR)/solve.o \
-	$(OBJ_DIR)/ttime.o \
 	$(OBJ_DIR)/gamma.o \
 	$(OBJ_DIR)/velocity.o \
 	$(OBJ_DIR)/pressure.o \
@@ -55,28 +59,31 @@ SOURCE_OBJ = $(OBJ_DIR)/bcond.o \
 	$(OBJ_DIR)/msolver.o \
 	$(OBJ_DIR)/fill.o
 
-# LASPACK
-LASPACK_LIB = $(third_party)/LASPack/laspack/liblaspack.a
-LASPACK_INC = $(third_party)/LASPack/laspack
+PETSC_DIR=$(third_party)/PETSc/petsc-2.3.1-p19
+PETSC_ARCH=linux-gnu-c-real-debug
+PETSC_LIB=$(third_party)/PETSc/petsc-2.3.1-p19/lib/$(PETSC_ARCH)/libpetsc.a
+PETSC_INCLUDE=$(third_party)/PETSc/petsc-2.3.1-p19/include
 
 # METIS
-#METIS_LIB = $(METIS_DIR)/$(METIS_ARCH)/libmetis.a
 METIS_LIB = $(third_party)/METIS/metis-4.0.3/libmetis.a
 
-# Debug: -g Profiling: -pg Performance: -O2 
-CFLAGS = -I$(SOURCE_DIR) -I$(LASPACK_INC) -O2
+CLEANFILES = $(SOURCE_OBJ) $(EXECUTABLE) 
+include ${PETSC_DIR}/bmake/common/base
 
-CC = gcc
+# Debug: -g Performance: -O2
+CFLAGS = $(PETSC_INCLUDE) -O2
 
-EXECUTABLE = ../../bin/OpenFVM-serial-v1.0
+CC = $(CLINKER)
 
-all: $(SOURCE_OBJ) $(LASPACK_OBJ)
+EXECUTABLE = ../../bin/OpenFVM-parallel-v1.0
+
+all: $(SOURCE_OBJ) chkopts
 
 	@echo ""
-	@echo "***** Building OpenFVM-Flow serial version *****"
+	@echo "***** Building OpenFVM-Flow parallel version *****"
 	@echo ""
 
-	$(CC) $(CFLAGS) $(SOURCE_OBJ) $(LASPACK_LIB) $(METIS_LIB) -o $(EXECUTABLE) -lm
+	$(CC) $(SOURCE_OBJ) $(METIS_LIB) ${PETSC_LIB} -o $(EXECUTABLE)
 
 $(OBJ_DIR)/bcond.o: $(SOURCE_DIR)/bcond.c
 	$(CC) $(CFLAGS) -c $(SOURCE_DIR)/bcond.c -o $(OBJ_DIR)/bcond.o
@@ -108,6 +115,9 @@ $(OBJ_DIR)/post.o: $(SOURCE_DIR)/post.c
 $(OBJ_DIR)/decomp.o: $(SOURCE_DIR)/decomp.c
 	$(CC) $(CFLAGS) -c $(SOURCE_DIR)/decomp.c -o $(OBJ_DIR)/decomp.o
 
+$(OBJ_DIR)/parallel.o: $(SOURCE_DIR)/parallel.c
+	$(CC) $(CFLAGS) -c $(SOURCE_DIR)/parallel.c -o $(OBJ_DIR)/parallel.o
+
 $(OBJ_DIR)/reorder.o: $(SOURCE_DIR)/reorder.c
 	$(CC) $(CFLAGS) -c $(SOURCE_DIR)/reorder.c -o $(OBJ_DIR)/reorder.o
 
@@ -123,19 +133,20 @@ $(OBJ_DIR)/gradient.o: $(SOURCE_DIR)/gradient.c
 $(OBJ_DIR)/restart.o: $(SOURCE_DIR)/restart.c
 	$(CC) $(CFLAGS) -c $(SOURCE_DIR)/restart.c -o $(OBJ_DIR)/restart.o
 
+$(OBJ_DIR)/vector.o: $(SOURCE_DIR)/vector.c
+	$(CC) $(CFLAGS) -c $(SOURCE_DIR)/vector.c -o $(OBJ_DIR)/vector.o
+
+$(OBJ_DIR)/matrix.o: $(SOURCE_DIR)/matrix.c
+	$(CC) $(CFLAGS) -c $(SOURCE_DIR)/matrix.c -o $(OBJ_DIR)/matrix.o
+
+$(OBJ_DIR)/itersolv.o: $(SOURCE_DIR)/itersolv.c
+	$(CC) $(CFLAGS) -c $(SOURCE_DIR)/itersolv.c -o $(OBJ_DIR)/itersolv.o
+
 $(OBJ_DIR)/setup.o: $(SOURCE_DIR)/setup.c
 	$(CC) $(CFLAGS) -c $(SOURCE_DIR)/setup.c -o $(OBJ_DIR)/setup.o
 
-	$(CC) $(CFLAGS) -c $(SOURCE_DIR)/setup.c -o $(OBJ_DIR)/setup.o
-
-$(OBJ_DIR)/scale.o: $(SOURCE_DIR)/scale.c
-	$(CC) $(CFLAGS) -c $(SOURCE_DIR)/scale.c -o $(OBJ_DIR)/scale.o
-
 $(OBJ_DIR)/solve.o: $(SOURCE_DIR)/solve.c
 	$(CC) $(CFLAGS) -c $(SOURCE_DIR)/solve.c -o $(OBJ_DIR)/solve.o
-
-$(OBJ_DIR)/ttime.o: $(SOURCE_DIR)/ttime.c
-	$(CC) $(CFLAGS) -c $(SOURCE_DIR)/ttime.c -o $(OBJ_DIR)/ttime.o
 
 $(OBJ_DIR)/gamma.o: $(SOURCE_DIR)/gamma.c
 	$(CC) $(CFLAGS) -c $(SOURCE_DIR)/gamma.c -o $(OBJ_DIR)/gamma.o
@@ -155,5 +166,6 @@ $(OBJ_DIR)/msolver.o: $(SOURCE_DIR)/msolver.c
 $(OBJ_DIR)/fill.o: $(SOURCE_DIR)/fill.c
 	$(CC) $(CFLAGS) -c $(SOURCE_DIR)/fill.c -o $(OBJ_DIR)/fill.o
 
-clean:
+rm: 
 	rm $(SOURCE_OBJ) $(LASPACK_OBJ)
+

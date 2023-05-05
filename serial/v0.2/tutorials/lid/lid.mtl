@@ -2,6 +2,7 @@ $TITL OpenFVM
 $FILE Material file
 $MTRL 1 12 Description of $CODE
 20012 1 Compressibility of fluid 0
+ss
 0.0
 20015 1 Density of fluid 0 
 1.0
